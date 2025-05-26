@@ -49,4 +49,12 @@ public abstract class Pianta {
     public String toString() {
         return String.format( "ID: %s, Descrizione: %s, Fioritura: %s, Prezzo: %f ", id, descrizione, fioritura, prezzo );
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Pianta other = (Pianta) obj;
+        return id.equals(other.id);  // confronto solo sull’ID (univoco)
+    }
 }
